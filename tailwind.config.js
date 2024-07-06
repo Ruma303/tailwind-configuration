@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
-        './src/**/*.{html,js,ts,jsx,tsx}',
+        "./index.html",
+        "./src/**/*.{html,js,ts,jsx,tsx}",
     ],
     theme: {
         screens: {
@@ -14,15 +15,6 @@ export default {
             '2xl': '1536px',
             '3xl': '1920px',
         },
-        colors: {
-            transparent: 'transparent',
-        },
-        extend: {},
-
     },
-    variants: [],
-    presets: [],
-    plugins: [],
-    darkMode: false,
 }
 
