@@ -19,7 +19,9 @@ function App() {
             In questa repo impareremo a personalizzare Tailwind per il nostro
             progetto, usando una semplice app di React.js
           </p>
-          <p></p>
+          <button className="bg-tahiti-75 hover:bg-tahiti-500 w-fit px-4 py-2 rounded-md">
+            Personal Color</button>
+            <blockquote className="bg-tahiti w-fit px-4 py-2 rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laborum possimus perspiciatis ad minus est, sunt exercitationem. Nam labore quae quibusdam excepturi, iste nihil deleniti adipisci molestiae, molestias enim neque!</blockquote>
         </main>
       </div>
     </>

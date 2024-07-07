@@ -1,67 +1,57 @@
-    import defaultTheme from 'tailwindcss/defaultTheme';
+import defaultTheme from 'tailwindcss/defaultTheme';
 
-    /** @type {import('tailwindcss').Config} */
-    export default {
-        content: [
-            "./index.html",
-            "./src/**/*.{html,js,ts,jsx,tsx}",
-        ],
-        theme: {
-            extend: {
-                screen: {
-                    'portrait': {'raw': '(min-height: 800px) and (orientation: portrait)'},
-                    'lg': '992px',
-                    'xl': '1280px',
-                    '2xl': '1440px',
-                    '3xl': '1920px',
-                },
-            },
-            screens: {
-                'xxs': '320px',
-                'xs': '480px',
-                ...defaultTheme.screens,
-                'phone' : {'max': '767px'},
-                'tablet': {'min': '768px', 'max': '1023px'},
-                'desktop': {'min': '1024px', 'max': '1279px'},
-            },
-            extend: {
-                screen: {
-                    'lg': '992px',
-                    'xl': '1280px',
-                    '2xl': '1440px',
-                    '3xl': '1920px',
-                },
-            },
-            /* colors: {
+/** @type {import('tailwindcss').Config} */
+export default {
+    content: [
+        "./index.html",
+        "./src/**/*.{html,js,ts,jsx,tsx}",
+    ],
+    theme: {
+        extend: {
+            colors: {
                 transparent: 'transparent',
-                black: '#000',
-                white: '#fff',
-                gray: {
-                    50: '#f9fafb',
-                    100: '#f7fafc',
-                    200: '#edf2f7',
-                    300: '#e2e8f0',
-                    400: '#cbd5e0',
-                    500: '#a0aec0',
-                    600: '#718096',
-                    700: '#4a5568',
-                    800: '#2d3748',
-                    900: '#1a202c',
+                current: 'currentColor',
+                'white': '#ffffff',
+                'purple': '#3f3cbb',
+                'midnight': '#121063',
+                'tahiti': {
+                    DEFAULT: '#67e8f9',
+                    50: '#f5f7ff',
+                    75: '#aeb9ff',
+                    100: '#cffafe',
+                    200: '#a5f3fc',
+                    300: '#67e8f9',
+                    400: '#22d3ee',
+                    500: '#06b6d4',
+                    600: '#0891b2',
+                    700: '#0e7490',
+                    800: '#155e75',
+                    900: '#164e63',
                 },
-                slate: {
-                    50: '#f9fafb',
-                    100: '#f4f5f7',
-                    200: '#e5e7eb',
-                    300: '#d2d6dc',
-                    400: '#9fa6b2',
-                    500: '#6b7280',
-                    600: '#4b5563',
-                    700: '#374151',
-                    800: '#252f3f',
-                    900: '#161e2e',
-                },
-
-            } */
+            },
+            screen: {
+                'portrait': { 'raw': '(min-height: 800px) and (orientation: portrait)' },
+                'lg': '992px',
+                'xl': '1280px',
+                '2xl': '1440px',
+                '3xl': '1920px',
+            },
         },
-    }
+        screens: {
+            'xxs': '320px',
+            'xs': '480px',
+            ...defaultTheme.screens,
+            'phone': { 'max': '767px' },
+            'tablet': { 'min': '768px', 'max': '1023px' },
+            'desktop': { 'min': '1024px', 'max': '1279px' },
+        },
+        /* colors: {
+           transparent: 'transparent',
+           current: 'currentColor',
+           'white': '#ffffff',
+           'purple': '#3f3cbb',
+           'midnight': '#121063',
+       }, */
+    },
+}
 
