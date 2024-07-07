@@ -8,6 +8,14 @@ export default {
     ],
     theme: {
         extend: {
+            spacing: {
+                '13': '3.25rem',
+                '15': '3.75rem',
+                '128': '32rem',
+                '144': '36rem',
+                '160': '40rem',
+            },
+
             colors: {
                 transparent: 'transparent',
                 current: 'currentColor',
@@ -28,6 +36,10 @@ export default {
                     800: '#155e75',
                     900: '#164e63',
                 },
+                warning: 'rgb(var(--color-warning) / <alpha-value>)',
+                band: 'rgb(var(--color-band) / <alpha-value>)',
+                'primary-color': '#ff11aa',
+                'secondary-color': '#4f4f4f',
             },
             screen: {
                 'portrait': { 'raw': '(min-height: 800px) and (orientation: portrait)' },
@@ -53,5 +65,13 @@ export default {
            'midnight': '#121063',
        }, */
     },
+    corePlugins: {
+        aspectRatio: false,
+    },
+    plugins: [
+        require('@tailwindcss/typography'),
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/aspect-ratio'),
+    ],
 }
 

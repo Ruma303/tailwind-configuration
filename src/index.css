@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-warning: 255 249 72;
+    --color-band: 100 200 185;
+  }
+}
+
+
