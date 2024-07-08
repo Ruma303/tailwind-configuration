@@ -1,7 +1,15 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
+import plugin from 'tailwindcss/plugin';
 
 /** @type {import('tailwindcss').Config} */
 export default {
+    //darkMode: 'class',
+    //darkMode: ['variant', '&:not(.light *)'],
+    /* darkMode: ['variant', [
+        '@media (prefers-color-scheme: dark) { &:not(.light *) }',
+        '&:is(.dark *)',
+    ]], */
+    //darkMode: ['selector', '[data-theme="dark"]'],
     content: [
         "./index.html",
         "./src/**/*.{html,js,ts,jsx,tsx}",
@@ -15,7 +23,6 @@ export default {
                 '144': '36rem',
                 '160': '40rem',
             },
-
             colors: {
                 transparent: 'transparent',
                 current: 'currentColor',
@@ -69,9 +76,51 @@ export default {
         aspectRatio: false,
     },
     plugins: [
+        plugin(function ({ addBase, theme, addComponents }) {
+            addBase({
+                'h1': { fontSize: theme('fontSize.2xl') },
+                'h2': { fontSize: theme('fontSize.xl') },
+                'h3': { fontSize: theme('fontSize.lg') },
+            }),
+            addComponents({
+                '.btn': {
+                    backgroundColor: '#3f3cbb',
+                    color: '#fff',
+                    padding: '.5rem 1rem',
+                    borderRadius: '.25rem',
+                    fontWeight: '600',
+                    width: 'fit-content',
+                    padding: '.5rem 1rem',
+                    borderRadius: '.5rem',
+                },
+                '.btn-blue': {
+                    backgroundColor: '#3490dc',
+                    width: 'fit-content',
+                    padding: '.5rem 1rem',
+                    borderRadius: '.5rem',
+                    color: '#fff',
+                    '&:hover': {
+                        backgroundColor: '#2779bd'
+                    },
+                },
+                '.btn-red': {
+                    backgroundColor: '#e3342f',
+                    width: 'fit-content',
+                    padding: '.5rem 1rem',
+                    borderRadius: '.5rem',
+                    color: '#fff',
+                    '&:hover': {
+                        backgroundColor: '#cc1f1a'
+                    },
+                },
+            })
+        }),
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
         require('@tailwindcss/aspect-ratio'),
     ],
+    presets: [
+        require('./mypreset.js'),
+    ]
 }
 

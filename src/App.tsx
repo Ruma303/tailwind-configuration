@@ -1,12 +1,26 @@
 import "./index.css";
+import { useState, useEffect } from "react";
 
 function App() {
+    const [theme, setTheme] = useState("light");
+
+    useEffect(() => {
+        if(theme === "dark") {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(theme === "light" ? "dark" : "light");
+    }
+
   return (
     <>
       <div
         className="w-screen h-screen p-4 flex flex-col items-center
-            bg-white xxs:bg-emerald-200 xs:bg-sky-200 sm:bg-pink-300 md:bg-slate-400
-            lg:bg-amber-200 xl:bg-slate-200 2xl:bg-purple-200 3xl:bg-indigo-300
+            bg-white dark:bg-black
         "
       >
         <main
@@ -17,6 +31,10 @@ function App() {
           <h1 className="text-4xl font-semibold text-red-500 md:text-white lg:text-slate-700">
             Configurazioni di Tailwind
           </h1>
+            <button
+                onClick={toggleTheme}
+                className="bg-tahiti-500 hover:bg-tahiti-300 dark:bg-white dark:text-black w-fit px-4 py-2 rounded-md"
+            >{theme === "light" ? "Dark Mode" : "Light Mode"}</button>
           <p className="text-lg text-gray-500 sm:text-gray-700 md:text-gray-200 lg:text-gray-600">
             In questa repo impareremo a personalizzare Tailwind per il nostro
             progetto, usando una semplice app di React.js
@@ -75,6 +93,26 @@ function App() {
               allowFullScreen
             ></iframe>
           </div>
+
+          <div className="flex gap-4 justify-center">
+            <button className="btn">Button 1</button>
+            <button className="md:btn-blue">Button 1</button>
+            <button className="lg:btn-red">Button 1</button>
+          </div>
+
+          <div className="flex gap-4 justify-center">
+            <p className="text-blue">My Preset Blue</p>
+            <p className="text-pink">My Preset Pink</p>
+          </div>
+
+
+          <div className="flex flex-col gap-4 items-center">
+            <h1 className="text-black dark:text-white text-4xl">Title Dark Mode</h1>
+            <p className="text-black dark:text-white">Dark Mode</p>
+          </div>
+
+
+
         </main>
       </div>
     </>
